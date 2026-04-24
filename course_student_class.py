@@ -31,16 +31,10 @@ student = GradedStudent
 
 
 if __name__ == "__main__":
-    c1 = Course("CS101", "Intro to Python", "Mon 09:00", 3, "Dr. Rao")
-    c2 = Course("CS102", "Data Structures", "Tue 10:00", 4, "Dr. Mehta")
-
-    print(str(c1))
-    print(str(c2))
+    c = Course("CS101", "Intro to Python", "Mon 09:00", 3, "Dr. Rao")
+    print(str(c))
 
     s = GradedStudent("Alice", roll=1)
-    s.enroll(c1)
-    s.enroll(c2)
-
-    print(f"Student: {s.name} (Roll: {s.roll})")
-    print(f"Courses enrolled: {len(s)}")
-    print(f"Total credits: {s.credits}")
+    s.enroll(c)
+    print(len(s))
+    print(s.credits)
