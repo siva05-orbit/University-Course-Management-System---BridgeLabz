@@ -101,5 +101,3 @@ for student in grade_data:
 print("\nClass Report:")
 for r in class_report(grade_data):
     print(r)
-
-
