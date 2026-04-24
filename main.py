@@ -19,12 +19,34 @@ class GradedStudent:
         self.courses = []
         self.credits = 0
 
+    @property
+    def credits(self):
+        return self._credits
+
+    @credits.setter
+    def credits(self, value):
+        value = int(value)
+        if value < 0:
+            raise ValueError("credits cannot be negative")
+        self._credits = value
+
     def enroll(self, course):
         self.courses.append(course)
         self.credits += course.credits
 
     def __len__(self):
         return len(self.courses)
+
+
+class StudentDeletion:
+    def __init__(self, students):
+        self.students = students
+
+    def delete_by_roll(self, roll):
+        for i, student in enumerate(self.students):
+            if student.roll == roll:
+                return self.students.pop(i)
+        return None
 
 
 # MEMBER 2
